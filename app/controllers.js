@@ -13,7 +13,5 @@ app.controller('MainController', function ($scope) {
     }
     $scope.submit = function () {
         $scope.books.push({ name: $scope.name, url: $scope.url, rate: $scope.rate })
-        $scope.name = "";
-        $scope.url = "";
     }
 })
