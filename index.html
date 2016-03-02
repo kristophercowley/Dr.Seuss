@@ -1,0 +1,44 @@
+<html ng-app="books">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dr. Suess Book Club</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body ng-controller="MainController">
+    <h1 style="text-align: center">Dr. Seuss Book Club</h1>
+    <ul class="list-group">
+        <li class="list-item" ng-repeat="book in books track by $index">
+            <hr/>
+            <div>
+                <h3 style="text-align: center"> {{book.name}}</h3>
+                <hr/>
+            </div>
+            <img height="50px" ng-src="{{book.url}}" alt="">
+            <a ng-click="remove($index)" style="float:right" class="badge"> x</a>
+            <h4 style="text-align: center"> Rating: {{book.rate}}  of 5 stars</h4>
+
+            <hr/>
+        </li>
+    </ul>
+    <hr>
+    <form>
+        <label>Book Name:</label>
+        <input type="text" ng-model="name">
+        <label>Cover:</label>
+        <input type="text" ng-model="url">
+        <label>Rating:</label>
+        <input type="text" ng-model="rate">
+        <button ng-click="submit()">Submit</button>
+    </form>
+    <hr>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers.js"></script>
+</body>
+
+</html>
